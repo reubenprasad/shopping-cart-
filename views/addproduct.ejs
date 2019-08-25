@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
     <title>Store</title>
    
         <!--custom css-->
@@ -51,30 +52,49 @@
         </div>
       </header>
       
-      <section class="products">
-            <div class="section-title">
-                <h2>Our Products</h2>
-            </div>
-            <div class="products-center">
-                <!-- single product-->
-                    <%for(var i=0;i<products.length;i++){%>
-        <article class="product">
-                <div class="img-container">
-                    <img src="/prod/view/<%= products[i].image %>" alt="product" class="product-img">
-                    <!-- <button class="bag-btn">
-                            <i class="fas fa-arrow-circle-right"></i>
-                        View Product
-                    </button> -->
-                    <a href="/prod/singleproduct/<%=products[i].id%>" class="bag-btn" style="text-decoration: none"> <i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;View Product</a>
+      <div class="container">
+            <div class="row">
+              
+              <div class="col-md-12"> 
+                
+                <div class="panel">
+                  <div class="panel-body">
+                   <form action="/prod/addproduct" method="POST" enctype="multipart/form-data">
+                      <p style="font-size: 30px; text-align: center" id="r">Add Product</p>
+                      <table class="table addtable" style="width: 600px; margin:auto; border: 2px solid black; border-collapse: collapse;">
+                          <tr>
+                              <td>Title :</td>
+                              <td><input type="text" class="form-control" name="title" placeholder="Enter Title" required></td>
+                          </tr>
+                          <tr>
+                              <td>ID :</td>
+                              <td><input type="text" class="form-control" name="id" placeholder="Enter ID" required></td>
+                          </tr>
+          
+                          <tr>
+                              <td>Price :</td>
+                              <td><input type="number" class="form-control" name="price" placeholder="Enter Price" required></td>
+                          </tr>
+          
+                          <tr>
+                              <td>Image :</td>
+                              <td><input type="file" class="form-control" name="image"  placeholder="Upload Image" required></td>
+                          </tr>
+                          
+                          <tr style="text-align: left">                        
+                              <td></td>
+                              <td><button class="btn" type="submit" style="width: 150px; color: #222; background: #f09d51;">Add</button></td>
+                          </tr>
+                      </table>
+                   </form>
+                    
+                  </div>
                 </div>
-                <h3><%=products[i].title%></h3>
-                <h4>$<%=products[i].price%></h4>
-            </article>
-            <%}%>
-            <!-- end of single product-->
+                                                                                                 
+                                                                                                           
+                 </div>
             </div>
-            
-        </section>
+          </div>
       
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

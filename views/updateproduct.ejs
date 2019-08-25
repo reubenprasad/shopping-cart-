@@ -53,7 +53,7 @@
       
       <section class="products">
             <div class="section-title">
-                <h2>Our Products</h2>
+                <h2>Update Products</h2>
             </div>
             <div class="products-center">
                 <!-- single product-->
@@ -65,7 +65,8 @@
                             <i class="fas fa-arrow-circle-right"></i>
                         View Product
                     </button> -->
-                    <a href="/prod/singleproduct/<%=products[i].id%>" class="bag-btn" style="text-decoration: none"> <i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;View Product</a>
+                    <a href="/prod/editproduct/<%=products[i].id%>" class="bag-btn" style="text-decoration: none; width:182.13px"> <i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;Edit Product</a>
+                    <a href="/prod/deleteproduct/<%=products[i].id%>" class="dlt-btn" style="text-decoration: none"> <i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;Delete Product</a>
                 </div>
                 <h3><%=products[i].title%></h3>
                 <h4>$<%=products[i].price%></h4>
