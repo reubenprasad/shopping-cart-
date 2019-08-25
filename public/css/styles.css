@@ -57,8 +57,8 @@ body {
   /* --------------- End of Navbar ---------------- */
   /* --------------- Hero ---------------- */
 .hero {
-    min-height: calc(100vh - 60px);
-    background: url("./images/hero-bcg.jpeg") center/cover no-repeat;
+    min-height: calc(100vh + 60px);
+    background: url("../images/product-6.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

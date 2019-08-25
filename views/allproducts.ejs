@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping Cart</title>
+    <title>Store</title>
    
         <!--custom css-->
     <link rel="stylesheet" href="/css/styles.css">
@@ -22,10 +22,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- <a href="/" class="navbar-brand">Home</a> -->
+           
           </div>
           <nav class="collapse navbar-collapse" role="navigation">
-               <!--  <img src="/images/logo.jpg" alt="image" height="60px"> -->
+            
             <ul class="nav navbar-nav">
                  
               <%for(var i=0;i<nav.length;i++){%>
@@ -51,12 +51,29 @@
         </div>
       </header>
       
-      <div class="hero bgimg">
-            <div class="banner">
-                <h1 class="banner-title">COMPUTER STORE</h1>
-                <button class="banner-btn">Shop Now</button>
+      <section class="products">
+            <div class="section-title">
+                <h2>Our Products</h2>
             </div>
-      </div>
+            <div class="products-center">
+                <!-- single product-->
+                    <%for(var i=0;i<products.length;i++){%>
+        <article class="product">
+                <div class="img-container">
+                    <img src="/prod/view/<%= products[i].image %>" alt="product" class="product-img">
+                    <button class="bag-btn">
+                            <i class="fas fa-arrow-circle-right"></i>
+                        View Product
+                    </button>
+                </div>
+                <h3><%=products[i].title%></h3>
+                <h4>$<%=products[i].price%></h4>
+            </article>
+            <%}%>
+            <!-- end of single product-->
+            </div>
+            
+        </section>
       
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
