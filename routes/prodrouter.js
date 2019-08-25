@@ -74,3 +74,34 @@ router.get("/editproduct/:id",function(req,res){
     })
 })
     
+router.post("/editproduct", upload, function(req,res){
+    products.updateOne({id:req.body.id} ,{$set:{
+        title:req.body.title,
+        id : req.body.id,
+        price : req.body.price,
+        image : req.file.filename
+    }}, function(err,result){
+        if (err) throw err;
+        else{
+            products.find({},(err,result)=>{
+                if (err) throw err;
+                else
+                    res.redirect("/prod/updateproduct")
+            })
+        }
+    }) 
+})
+
+router.get("/deleteproduct/:pid",function(req,res){
+    products.deleteOne({id:req.params.pid},function(err,result){
+        if (err) throw err;
+        else
+        {
+            products.find({},(err,result)=>{
+                if(err) throw err;
+                else
+                    res.redirect("/prod/updateproduct")
+            })
+        }
+    })
+})
