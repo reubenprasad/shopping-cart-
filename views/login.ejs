@@ -51,50 +51,37 @@
           </nav>
         </div>
       </header>
-      
-      <div class="container">
-            <div class="row">
-              
-              <div class="col-md-12"> 
+      <br>
+      <div id="login">
+            <div class="container">
+                    <div class="row">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                               <form action="/user/login" method="POST">
+                                <p style="font-size: 30px; text-align: center" id="log">Login</p>
+                                <table class="table" style="width: 600px; margin:auto; border: 2px solid black; border-collapse: collapse;">
+                                    <tr>
+                                        <td>Username :</td>
+                                        <td><input type="text" class="form-control" name="un" placeholder="Enter Username" required></td>
+                                    </tr>
                 
-                <div class="panel">
-                  <div class="panel-body">
-                   <form action="/prod/addproduct" method="POST" enctype="multipart/form-data">
-                      <p style="font-size: 30px; text-align: center" id="r">Add Product</p>
-                      <table class="table addtable" style="width: 600px; margin:auto; border: 2px solid black; border-collapse: collapse;">
-                          <tr>
-                              <td>Title :</td>
-                              <td><input type="text" class="form-control" name="title" placeholder="Enter Title" required></td>
-                          </tr>
-                          <tr>
-                              <td>ID :</td>
-                              <td><input type="text" class="form-control" name="id" placeholder="Enter ID" required></td>
-                          </tr>
-          
-                          <tr>
-                              <td>Price :</td>
-                              <td><input type="number" class="form-control" name="price" placeholder="Enter Price" required></td>
-                          </tr>
-          
-                          <tr>
-                              <td>Image :</td>
-                              <td><input type="file" class="form-control" name="image"  placeholder="Upload Image" required></td>
-                          </tr>
-                          
-                          <tr style="text-align: left">                        
-                              <td></td>
-                              <td><button class="btn" type="submit" style="width: 150px; color: #222; background: #f09d51;">Add</button></td>
-                          </tr>
-                      </table>
-                   </form>
-                    
-                  </div>
+                                    <tr>
+                                        <td>Password :</td>
+                                        <td><input type="password" class="form-control" name="pw" placeholder="Enter Password" required></td>
+                                    </tr>
+                
+                                    <tr style="text-align: right">                        
+                                        <td><button class="btn " style="width: 150px; color: #222; background: #f09d51;">Login</button></td>
+                                        <td style="text-align: center"><a href="/user/signup">Sign Up</a></td>
+                                    </tr>
+                                </table>
+                               </form>
+                            
+
+                        </div>
+                    </div>
                 </div>
-                                                                                                 
-                                                                                                           
-                 </div>
-            </div>
-          </div>
+    </div>
+     
       
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

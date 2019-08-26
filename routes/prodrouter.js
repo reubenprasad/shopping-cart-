@@ -26,7 +26,7 @@ module.exports = router;
 router.get("/",function(req,res){
     products.find({},function(err,result){
         
-        res.render("allproducts",{nav:[{link:"/",title:"Home"}],products:result});
+        res.render("allproducts",{nav:[{link:"/",title:"Home"},{link:"/prod/addproduct",title:"Add Product"},{link:"/prod/updateproduct",title:"Update Product"}],products:result});
     });
 })
 
@@ -42,7 +42,7 @@ products.find({id:req.params.id},function(err,result){
 })
 
 router.get("/addproduct",function(req,res){
-        res.render("addproduct",{nav:[{link:"/",title:"Home"}]});
+        res.render("addproduct",{nav:[{link:"/",title:"Home"},{link:"/prod/addproduct",title:"Add Product"},{link:"/prod/updateproduct",title:"Update Product"}]});
 })
 
 router.post("/addproduct",upload,function(req,res){
@@ -63,14 +63,14 @@ router.post("/addproduct",upload,function(req,res){
 router.get("/updateproduct",function(req,res){
     products.find({},function(err,result){
         
-        res.render("updateproduct",{nav:[{link:"/",title:"Home"}],products:result});
+        res.render("updateproduct",{nav:[{link:"/",title:"Home"},{link:"/prod/addproduct",title:"Add Product"},{link:"/prod/updateproduct",title:"Update Product"}],products:result});
     });
 })
 
 router.get("/editproduct/:id",function(req,res){
     products.find({id:req.params.id},function(err,result){
         if (err) throw err;
-        res.render("editproduct",{nav:[{link:"/",title:"Home"}],products:result});
+        res.render("editproduct",{nav:[{link:"/",title:"Home"},{link:"/prod/addproduct",title:"Add Product"},{link:"/prod/updateproduct",title:"Update Product"}],products:result});
     })
 })
     
